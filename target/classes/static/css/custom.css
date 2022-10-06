@@ -1,0 +1,154 @@
+@-moz-document url-prefix() {
+  select.form-control {
+    padding-right: 25px;
+    background-image: url("data:image/svg+xml,\
+      <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='12px'\
+           height='14px' viewBox='0 0 1200 1000' fill='rgb(214, 213, 222)'>\
+        <path d='M1100 411l-198 -199l-353 353l-353 -353l-197 199l551 551z'/>\
+      </svg>");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 7px) 50%;
+    -moz-appearance: none;
+    appearance: none;
+  }
+}
+.icon-refresh-animate {
+  animation-name: rotateThis;
+  animation-duration: .5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes rotateThis {
+  from { transform:scale(1)rotate(0deg);}
+  to {transform: scale(1) rotate(360deg);}
+}
+.btn-default {
+color: #e14eca;
+border-color: #e14eca;
+background: transparent;
+border: 1px solid;
+font-weight: 400;
+}
+.btn-default:hover {
+color: #e14eca;
+border-color: #e14eca;
+background: transparent !important;
+border: 1px solid;
+font-weight: 400;
+}
+
+.Zebra_DatePicker_Icon_Wrapper{
+width: 200px !important;
+}
+.ss-main .ss-multi-selected .ss-values .ss-value{
+color: #169f85;
+border-color: #1e7e34;
+background-color: transparent !important;
+background-image: none !important;
+box-shadow: none;
+border: 1px solid;
+}
+.ss-content .ss-list .ss-optgroup-label-selectable:hover {
+    color: #fff;
+    background-color: transparent;
+    border-bottom: 1px solid #e14eca;
+    margin-bottom: 0px;
+}
+.ss-content .ss-list .ss-option.ss-highlighted, .ss-content .ss-list .ss-option:hover {
+    color: #fff;
+    background-color: transparent;
+    border-bottom: 1px solid #e14eca;
+    margin-bottom: 0px;
+}
+.ss-content .ss-list .ss-option.ss-highlighted, .ss-content .ss-list .ss-option .ss-optgroup-label-selectable {
+    color: #fff;
+    background-color: transparent;
+    margin-bottom: 1px;
+}
+.ss-main .ss-multi-selected {
+    border: 1px solid #2b3553;
+    border-radius: 0px;
+    background-color: #3b3d5a;
+    min-height: 38px;
+}
+.ss-content {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #2b3553;
+    background-color: #3b3d59;
+    color: #8d96ac;
+}
+.ss-content .ss-search input {
+    border: 1px solid #2b3553;
+    border-radius: 3px;
+    background-color: #3b3d5a;
+    color: #dedede;
+}
+.ss-content .ss-list .ss-option.ss-disabled {
+    cursor: not-allowed;
+    color: #dedede;
+    background-color: #3b3d5a;
+}
+.ss-content .ss-search input:focus {
+    box-shadow: 0 0 5px #e14eca;
+}
+
+#datatable-buttons_filter{
+margin-top: -43px;
+}
+.icon-minimal-down, .icon-minimal-up:hover {
+    cursor: pointer;
+}
+
+#table_body{
+text-align: center;
+}
+
+.error_input{
+border: 1px solid #b71111;
+}
+.zmniejszyc{
+border: 1px solid #ff8d72 !important;
+}
+.zwiekszyc{
+border: 1px solid #0098f0 !important;
+}
+
+#marko-file-label{
+padding-top: 2px;
+padding-bottom: 2px;
+height: auto;
+margin-bottom: 0px;
+}
+#ergold-file-label{
+padding-top: 2px;
+padding-bottom: 2px;
+height: auto;
+margin-bottom: 0px;
+}
+#gese-file-label{
+padding-top: 2px;
+padding-bottom: 2px;
+height: auto;
+margin-bottom: 0px;
+}
+#garett-file-label{
+padding-top: 2px;
+padding-bottom: 2px;
+height: auto;
+margin-bottom: 0px;
+}
+#wiko-file-label{
+padding-top: 2px;
+padding-bottom: 2px;
+height: auto;
+margin-bottom: 0px;
+}
+
+.input_api_field:focus {
+border: 1px solid rgb(75 219 75) !important;
+}
+
+#shoper_image_table tr:nth-child(even) {background: #fff}
+#shoper_image_table tr:nth-child(odd) {background: #f4f4f5}
+#shoper_image_table tr th {border-color: rgb(183 176 176) !important;}

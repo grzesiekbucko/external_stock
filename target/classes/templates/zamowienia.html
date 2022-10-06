@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Zamówienia</title>
+    <!-- Required meta tags -->
+    <meta name="robots" content="noindex, nofollow"/>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet"
+          th:href="@{https://use.fontawesome.com/releases/v5.0.6/css/all.css}">
+    <!-- Nucleo Icons -->
+    <link href="../static/css/nucleo-icons.css" rel="stylesheet"
+          th:href="@{/css/nucleo-icons.css}"/>
+    <!-- Black Dashboard CSS -->
+    <link href="../static/css/black-dashboard.css?v=1.0.0" rel="stylesheet"
+          th:href="@{/css/black-dashboard.css?v=1.0.0}"/>
+    <!-- NProgress -->
+    <!--    <link href="../static/css/nprogress.css" th:href="@{/css/nprogress.css}" rel="stylesheet" type="text/css"/>-->
+    <!-- Custom Theme Style -->
+    <link href="../static/css/custom.min.css" th:href="@{/css/custom.min.css}" rel="stylesheet" type="text/css"/>
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"
+          th:href="@{https://fonts.googleapis.com/css?family=Roboto&display=swap}">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Tinos&display=swap"
+          th:href="@{https://fonts.googleapis.com/css?family=Kaushan+Script|Tinos&display=swap}" rel="stylesheet">
+
+    <!-- Datatables -->
+    <link href="../static/css/dataTables.bootstrap.min.css" rel="stylesheet"
+          th:href="@{/css/dataTables.bootstrap.min.css}">
+    <link href="../static/css/buttons.bootstrap.min.css" rel="stylesheet" th:href="@{/css/buttons.bootstrap.min.css}">
+    <link href="../static/css/fixedHeader.bootstrap.min.css" rel="stylesheet"
+          th:href="@{/css/fixedHeader.bootstrap.min.css}">
+    <link href="../static/css/responsive.bootstrap.min.css" rel="stylesheet"
+          th:href="@{/css/responsive.bootstrap.min.css}">
+    <link href="../static/css/scroller.bootstrap.min.css" rel="stylesheet" th:href="@{/css/scroller.bootstrap.min.css}">
+
+    <!-- PNotify -->
+    <link href="../static/css/pnotify.css" rel="stylesheet" th:href="@{/css/pnotify.css}">
+    <link href="../static/css/pnotify.buttons.css" rel="stylesheet" th:href="@{/css/pnotify.buttons.css}">
+    <link href="../static/css/pnotify.nonblock.css" rel="stylesheet" th:href="@{/css/pnotify.nonblock.css}">
+    <!--  Fonts and icons  -->
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet"
+          th:href="@{https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800}">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/zebra_datepicker@latest/dist/css/bootstrap/zebra_datepicker.min.css">
+    <!-- Slim Select -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.25.0/slimselect.min.css" rel="stylesheet"
+          th:href="@{https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.25.0/slimselect.min.css}"/>
+
+    <!-- Custom Theme Style -->
+    <link href="../static/css/custom.css" th:href="@{/css/custom.css}" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="sidebar" data-color="blue" data-background-color="white" data="blue">
+        <div class="logo">
+            <a href="index.html" class="simple-text logo-mini">
+                <i class="tim-icons icon-chart-bar-32"></i>
+            </a>
+            <span class="simple-text logo-normal">
+          Menu
+        </span>
+        </div>
+
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/panel">
+                        <i class="tim-icons icon-delivery-fast"></i>
+                        <p style="font-size: 12px">Magazyn wirtualny</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/komplety">
+                        <i class="tim-icons icon-puzzle-10"></i>
+                        <p style="font-size: 12px">Komplety</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/atrybuty">
+                        <i class="tim-icons icon-app"></i>
+                        <p style="font-size: 12px">Atrybuty</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/raporty">
+                        <i class="tim-icons icon-paper"></i>
+                        <p style="font-size: 12px">Raporty</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/zamowienia">
+                        <i class="tim-icons icon-cart"></i>
+                        <p style="font-size: 12px">Zamówienia</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/uwagi_opis">
+                        <i class="tim-icons icon-notes"></i>
+                        <p style="font-size: 12px">Uwagi - Opis</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/shoper_images">
+                        <i class="tim-icons icon-camera-18"></i>
+                        <p style="font-size: 12px;">Shoper Api - zdjęcia</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/kropa_zdjecia">
+                        <i class="tim-icons icon-single-copy-04"></i>
+                        <p style="font-size: 12px">Kropa - zdjęcia</p>
+                    </a>
+                </li>
+                <!-- your sidebar here -->
+            </ul>
+        </div>
+    </div>
+    <div class="main-panel">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
+            <div class="container-fluid">
+                <div class="navbar-wrapper">
+                    <div class="navbar-toggle d-inline">
+                        <button type="button" class="navbar-toggler">
+                            <span class="navbar-toggler-bar bar1"></span>
+                            <span class="navbar-toggler-bar bar2"></span>
+                            <span class="navbar-toggler-bar bar3"></span>
+                        </button>
+                    </div>
+                    <a class="navbar-brand" href="">Zamówienia</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-bar navbar-kebab"></span>
+                    <span class="navbar-toggler-bar navbar-kebab"></span>
+                    <span class="navbar-toggler-bar navbar-kebab"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navigation">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="dropdown nav-item">
+                            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                                <div class="photo" style="margin-right: 10px">
+                                    <img src="../static/img/avatar.png">
+                                </div>
+                                <b class="caret d-none d-lg-block d-xl-block"></b>
+                                <p class="d-lg-none">
+                                    Log out
+                                </p>
+                            </a>
+                            <ul class="dropdown-menu dropdown-navbar">
+                                <li class="nav-link"><a href="javascript:void(0)"
+                                                        class="nav-item dropdown-item">Profile</a></li>
+                                <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Settings</a>
+                                </li>
+                                <li class="dropdown-divider"></li>
+                                <li class="nav-link"><a th:href="@{/logout}" class="nav-item dropdown-item">Log
+                                    out</a></li>
+                            </ul>
+                        </li>
+                        <li class="separator d-lg-none"></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row justify-content-left">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header ">
+                                <h6 class="title d-inline">Zamówienia</h6>
+                                <p class="card-category d-inline"></p>
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <div class="card-body"
+                                         style="padding-bottom: 0px; padding-left: 10px; padding-right: 0px">
+                                        <form th:action="@{/szukaj_zamowien}" method="post">
+                                            <div class="row align-items-center justify-content-end">
+
+                                                <div class="col-6">
+                                                    <div class="row justify-content-right">
+                                                        <div class="align-self-center"><label>Data zamówienia</label>
+                                                        </div>
+                                                        <div class="">
+                                                            <span class="Zebra_DatePicker_Icon_Wrapper col-3"
+                                                                  style="margin-left: 30px; margin-right: 15px; display: block; position: relative; float: none; inset: auto; padding: 0px;">
+                                                                <input th:value="${data_start}" name="data_start"
+                                                                       id="datepicker_start" type="text"
+                                                                       class="form-control datepicker"
+                                                                       data-zdp_readonly_element="false"
+                                                                       style="position: relative; float: none; inset: auto; margin: 0px;">
+                                                            </span>
+                                                        </div>
+
+                                                        <div class="col-3">
+                                                            <button id="search_button_producent" name="" type="submit"
+                                                                    class="btn btn-default buttons-print btn-sm">
+                                                                <i class="fa fa-search"></i> szukaj
+                                                            </button>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="row">
+                                        <div class="x_content">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="card-box table-responsive">
+                                                        <table data-display-length='-1'
+                                                               id="datatable-buttons"
+                                                               class="table table-striped table-bordered"
+                                                               style="width:100%">
+                                                            <thead style="text-align: center;">
+                                                            <tr>
+                                                                <th>#</th>
+                                                                <th class="">ID ZAMOWIENIA</th>
+                                                                <th class="">NUMER ZAMÓWIENIA</th>
+                                                                <th class="">KONTRAHENT NAZWA</th>
+                                                                <th class="">DATA</th>
+                                                                <th class=""></th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody id="table_body">
+                                                            <tr class="table_row"
+                                                                th:each="zamowienie, iStat : ${zamowieniaList}">
+
+                                                                    <th th:text="${iStat.count}"></th>
+                                                                    <th th:text="${zamowienie.idZamowienia}"></th>
+                                                                    <th th:text="${zamowienie.numer}"></th>
+                                                                    <th th:text="${zamowienie.kontrahentNazwa}"></th>
+                                                                    <th th:text="${#dates.format(zamowienie.dataUtworzeniaWiersza, 'dd-MMM-yyyy')}"></th>
+                                                                    <th style="text-align: center;">
+                                                                        <input id="id_zam"
+                                                                               type="hidden"
+                                                                               name="id_zam"
+                                                                               th:value="${zamowienie.idZamowienia}"/>
+                                                                        <input id="nr_zam"
+                                                                               type="hidden"
+                                                                               name="nr_zam"
+                                                                               th:value="${zamowienie.numer}"/>
+                                                                        <a th:href="@{'/edytuj_zamowienie/' + ${zamowienie.idZamowienia}}"
+                                                                                type="submit" style="border-color: #e14eca; color: #e14eca;"
+                                                                                class="btn btn-default buttons-print btn-sm">
+                                                                            Edytuj
+                                                                        </a>
+                                                                    </th>
+
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--   Core JS Files   -->
+<script src="../static/js/core/jquery.min.js" type="text/javascript"
+        th:src="@{/js/core/jquery.min.js}"></script>
+<script src="../static/js/core/popper.min.js" type="text/javascript"
+        th:src="@{/js/core/popper.min.js}"></script>
+<script src="../static/js/core/bootstrap.min.js" type="text/javascript"
+        th:src="@{/js/core/bootstrap.min.js}"></script>
+<script src="../static/js/plugins/perfect-scrollbar.jquery.min.js"
+        th:src="@{/js/plugins/perfect-scrollbar.jquery.min.js}"></script>
+
+<!-- FastClick -->
+<script type="text/javascript" src="../static/js/fastclick.js" th:src="@{/js/fastclick.js}"></script>
+
+
+<!-- NProgress -->
+<!--<script type="text/javascript" src="../static/js/nprogress.js" th:src="@{/js/nprogress.js}"></script>-->
+
+<!-- FontAwesome -->
+<script src="https://use.fontawesome.com/2d4a782e0b.js" th:src="@{https://use.fontawesome.com/2d4a782e0b.js}"></script>
+
+<!-- Custom Theme Scripts -->
+<script type="text/javascript" src="../static/js/custom.min.js" th:src="@{/js/custom.min.js}"></script>
+<script type="text/javascript" src="../static/js/fragments.js" th:src="@{/js/fragments.js}"></script>
+
+<!-- Datatables -->
+<script src="../static/js/jquery.dataTables.min.js" th:src="@{/js/jquery.dataTables.min.js}"></script>
+<script src="../static/js/dataTables.bootstrap.min.js" th:src="@{/js/dataTables.bootstrap.min.js}"></script>
+<script src="../static/js/dataTables.buttons.min.js" th:src="@{/js/dataTables.buttons.min.js}"></script>
+<script src="../static/js/buttons.flash.min.js" th:src="@{/js/buttons.flash.min.js}"></script>
+<script src="../static/js/buttons.html5.min.js" th:src="@{/js/buttons.html5.min.js}"></script>
+<script src="../static/js/buttons.print.min.js" th:src="@{/js/buttons.print.min.js}"></script>
+<script src="../static/js/buttons.bootstrap.min.js" th:src="@{/js/buttons.bootstrap.min.js}"></script>
+
+<script src="../static/js/dataTables.fixedHeader.min.js" th:src="@{/js/dataTables.fixedHeader.min.js}"></script>
+<script src="../static/js/dataTables.keyTable.min.js" th:src="@{/js/dataTables.keyTable.min.js}"></script>
+
+<script src="../static/js/dataTables.responsive.min.js" th:src="@{/js/dataTables.responsive.min.js}"></script>
+<script src="../static/js/responsive.bootstrap.js" th:src="@{/js/responsive.bootstrap.js}"></script>
+
+<script src="../static/js/dataTables.scroller.min.js" th:src="@{/js/dataTables.scroller.min.js}"></script>
+
+<script src="../static/js/jszip.min.js" th:src="@{/js/jszip.min.js}"></script>
+<script src="../static/js/pdfmake.min.js" th:src="@{/js/pdfmake.min.js}"></script>
+<script src="../static/js/vfs_fonts.js" th:src="@{/js/vfs_fonts.js}"></script>
+
+<!-- PNotify -->
+<script src="../static/js/pnotify.js" th:src="@{/js/pnotify.js}"></script>
+<script src="../static/js/dist/pnotify.buttons.js" th:src="@{/js/pnotify.buttons.js}"></script>
+<script src="../static/js/pnotify.nonblock.js" th:src="@{/js/pnotify.nonblock.js}"></script>
+
+<!-- Chartist JS -->
+<script src="../static/js/plugins/chartjs.min.js" th:src="@{/js/plugins/chartjs.min.js}"></script>
+<!--  Notifications Plugin    -->
+<script src="../static/js/plugins/bootstrap-notify.js" th:src="@{/js/plugins/bootstrap-notify.js}"></script>
+<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="../static/js/black-dashboard.js?v=1.0.0" type="text/javascript"
+        th:src="@{/js/black-dashboard.js?v=1.0.0}"></script>
+
+<!-- for a specific version -->
+<script
+        src="https://cdn.jsdelivr.net/npm/zebra_datepicker@1.9.13/dist/zebra_datepicker.min.js"></script>
+<!-- Slim Select -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.25.0/slimselect.min.js"
+        th:src="@{https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.25.0/slimselect.min.js}"></script>
+
+<script src="../static/js/custom.js" type="text/javascript"
+        th:src="@{/js/custom.js}"></script>
+<script>
+var select = new SlimSelect({
+    select: '#dostawca_select',
+    placeholder: 'Wybierz dostawców',
+    selectByGroup: true,
+    hideSelectedOption: true,
+    closeOnSelect: false,
+    searchText: 'Brak wyników',
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+
+</html>

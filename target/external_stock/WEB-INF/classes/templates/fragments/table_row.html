@@ -1,0 +1,46 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head></head>
+<body>
+<tr class="table_row"
+    th:each="product, iStat : ${productList}"
+    th:id="'row'+${product.idArtykulu}"
+    th:fragment="entity-row">
+    <form th:action="@{/edit}"
+          method="post">
+        <th th:text="${iStat.count}">#</th>
+        <th th:text="${product.indeksKatalogowy}"></th>
+        <th th:text="${product.stan}"></th>
+        <th class="sales_level_cell"
+            th:text="${product.iloscSprzedana}"></th>
+        <th class="minimal_stock_cell"
+            th:text="${product.stanMinimalny}"></th>
+        <th class="justify-content-center">
+            <input type="text"
+                   class="form-control minimal_stock_input"
+                   value=""
+                   name="minimal_stock"
+                   style="text-align: center;">
+        </th>
+        <th style="text-align: center;">
+           <span>
+              <i class="tim-icons icon-minimal-up"></i>
+           </span>
+            &emsp;&emsp;
+            <span>
+              <i class="tim-icons icon-minimal-down"></i>
+            </span>
+        </th>
+        <th style="text-align: center;">
+            <input type="hidden" name="id"
+                   th:value="${product.idArtykulu}"/>
+            <button type="submit"
+                    onclick="updateRow()"
+                    class="btn btn-default buttons-print btn-sm">
+                ustaw
+            </button>
+        </th>
+        <th th:text="${product.dostawca}"></th>
+        <th></th>
+    </form>
+</tr>
+</body>
